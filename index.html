@@ -36,8 +36,15 @@
 		</div>
 
 
+		<div id="canvas" class="col-md-12">
+			<span id='fullText'>100%</span>
+			<div id="fullMarker"></div>
+			<div ng-repeat="item in items" class='bar' style="{{style(item)}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}"></div>
+
+		</div>
 
 
+		<div class="clearfix"></div>
 
 		<div class="col-sm-4 col-md-3" ng-repeat="item in items">
 			<div class="form-box equalize">
@@ -48,14 +55,6 @@
 
 		</div>
 
-		<div class="clearfix"></div>
-
-		<div id="canvas" class="col-md-12">
-			<span id='fullText'>100%</span>
-			<div id="fullMarker"></div>
-			<div ng-repeat="item in items" class='bar' style="{{style(item)}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}">
-
-		</div>
 
 
 		</div>
