@@ -1,159 +1,273 @@
+
+
 var app = angular.module('jogoDoOrcamento', []);
+
+app.directive('tooltip', function(){
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs){
+            $(element).hover(function(){
+                // on mouseenter
+                $(element).tooltip('show');
+            }, function(){
+                // on mouseleave
+                $(element).tooltip('hide');
+            });
+        }
+    };
+});
 
 app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
 
-    $scope.items = [ 
+    $scope.gabarito = [ 
     {
-    	value: 1,
+    	value: 0.2562461713,
     	name: 'Legislativa',
-        color: '#3EBB47'
     }, 
     {
-    	value: 1,
+    	value: 1.137733,
     	name: 'Judiciária',
-        color: '#3E96BB'
     }, 
     {
-    	value: 1,
+    	value: 0.2220800151,
     	name: 'Essencial à Justiça',
-        color: '#BB4D3E'
     }, 
     {
-    	value: 1,
+    	value: 0.9566523727,
     	name: 'Administração',
-        color: '#efe63d'
     }, 
     {
-    	value: 1,
+    	value: 2.053385986,
     	name: 'Defesa Nacional',
-        color: '#3EBBAB'
     }, 
     {
-    	value: 1,
+    	value: 0.276745865,
     	name: 'Segurança Pública',
-        color: '#2A7E38'
     }, 
     {
-    	value: 1,
+    	value: 0.1059150841,
     	name: 'Relações Exteriores',
-        color: '#BB3E89'
     }, 
     {
-    	value: 1,
+    	value: 2.65812695,
     	name: 'Assistência Social',
-        color: '#62CBC4'
     }, 
     {
-    	value: 1,
+    	value: 19.56695764,
     	name: 'Previdência Social',
-        color: '#0F2E1F'
     }, 
     {
-    	value: 15,
+    	value: 3.430282079,
     	name: 'Saúde',
-        color: '#BF406A'
     }, 
     {
-    	value: 2,
+    	value: 2.538545403,
     	name: 'Trabalho',
-        color: '#2B827F'
     }, 
     {
-    	value: 25,
+    	value: 3.519114085,
     	name: 'Educação',
-        color: '#E0E2A7'
     }, 
     {
-    	value: 6,
+    	value: 0.07516554357,
     	name: 'Cultura',
-        color: '#7E2A5D'
     }, 
     {
-    	value: 1,
+    	value: 0.04441600302,
     	name: 'Direitos da Cidadania',
-        color: '#C9EDE7'
     }, 
     {
-    	value: 4,
+    	value: 0.08541539042,
     	name: 'Urbanismo',
-        color: '#6B3924'
     }, 
     {
-    	value: 2,
+    	value: 0.4236603365,
     	name: 'Habitação',
-        color: '#D279CB'
     }, 
     {
-    	value: 2,
+    	value: 0.02982705433,
     	name: 'Saneamento',
-        color: '#184849'
     }, 
     {
-    	value: 4,
+    	value: 0.2118301682,
     	name: 'Gestão Ambiental',
-        color: '#FAFCF7'
     }, 
     {
-    	value: 4,
+    	value: 0.2835790962,
     	name: 'Ciência e Tecnologia',
-        color: '#301132'
     }, 
     {
-    	value: 4,
+    	value: 1.028401301,
     	name: 'Agricultura',
-        color: '#2F8E37'
     }, 
     {
-    	value: 4,
+    	value: 0.1366646247,
     	name: 'Organização Agrária',
-        color: '#CD6A6F'
     }, 
     {
-    	value: 4,
+    	value: 0.0649156967,
     	name: 'Indústria',
-        color: '#CCCC66'
     }, 
     {
-    	value: 2,
-    	name: 'Comércio e Serviços',
-        color: '#B6E7D1'
-    }, 
+        value: 0.1810806277,
+        name: 'Comércio e Serviços',
+    },  
     {
-    	value: 2,
+    	value: 0.05124923425,
     	name: 'Comunicações',
-        color: '#181339'
     }, 
     {
-    	value: 4,
+    	value: 0.06833231233,
     	name: 'Energia',
-        color: '#BB7B3E'
     }, 
     {
-    	value: 1,
+    	value: 0.6218240422,
     	name: 'Transporte',
-        color: '#225467'
     }, 
     {
-    	value: 4,
+    	value: 0.05124923425,
     	name: 'Desporto e Lazer',
-        color: '#C3514B'
     }, 
     {
-    	value: 0.9,
+    	value: 58.08246548,
     	name: 'Encargos Especiais',
-        color: '#D5F1DC'
     }, 
     {
-    	value: 0.1,
+    	value: 1.838139202,
     	name: 'Reserva de Contingência',
-        color: '#321123'
     } ];
 
+    $scope.ideal = [ 
+    {
+        value: 1,
+        name: 'Legislativa',
+    }, 
+    {
+        value: 1,
+        name: 'Judiciária',
+    }, 
+    {
+        value: 1,
+        name: 'Essencial à Justiça',
+    }, 
+    {
+        value: 1,
+        name: 'Administração',
+    }, 
+    {
+        value: 1,
+        name: 'Defesa Nacional',
+    }, 
+    {
+        value: 1,
+        name: 'Segurança Pública',
+    }, 
+    {
+        value: 1,
+        name: 'Relações Exteriores',
+    }, 
+    {
+        value: 1,
+        name: 'Assistência Social',
+    }, 
+    {
+        value: 1,
+        name: 'Previdência Social',
+    }, 
+    {
+        value: 15,
+        name: 'Saúde',
+    }, 
+    {
+        value: 2,
+        name: 'Trabalho',
+    }, 
+    {
+        value: 25,
+        name: 'Educação',
+    }, 
+    {
+        value: 6,
+        name: 'Cultura',
+    }, 
+    {
+        value: 1,
+        name: 'Direitos da Cidadania',
+    }, 
+    {
+        value: 4,
+        name: 'Urbanismo',
+    }, 
+    {
+        value: 2,
+        name: 'Habitação',
+    }, 
+    {
+        value: 2,
+        name: 'Saneamento',
+    }, 
+    {
+        value: 4,
+        name: 'Gestão Ambiental',
+    }, 
+    {
+        value: 4,
+        name: 'Ciência e Tecnologia',
+    }, 
+    {
+        value: 4,
+        name: 'Agricultura',
+    }, 
+    {
+        value: 4,
+        name: 'Organização Agrária',
+    }, 
+    {
+        value: 4,
+        name: 'Indústria',
+    }, 
+    {
+        value: 2,
+        name: 'Comércio e Serviços',
+    },  
+    {
+        value: 2,
+        name: 'Comunicações',
+    }, 
+    {
+        value: 4,
+        name: 'Energia',
+    }, 
+    {
+        value: 1,
+        name: 'Transporte',
+    }, 
+    {
+        value: 4,
+        name: 'Desporto e Lazer',
+    }, 
+    {
+        value: 0.9,
+        name: 'Encargos Especiais',
+    }, 
+    {
+        value: 0.1,
+        name: 'Reserva de Contingência',
+    } ];
 
-    // $scope.slider = function() {
-        
-    // };
-    $scope.orcTotal = 3000000000000;
+    $scope.items = $scope.ideal;
+
+    $scope.toIdeal = function () {
+        $scope.items = $scope.ideal;
+        $('[data-toggle="tooltip"]').tooltip()
+    }
+    $scope.toReal = function () {
+        $scope.items = $scope.gabarito;
+        $('[data-toggle="tooltip"]').tooltip()
+    }
+
+
+    $scope.orcTotal = 2926873000000;
 
     $scope.valueTotal = function(val) {
 
@@ -187,19 +301,19 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
         if (somaTotal > 2000000000000) {
             somaTotal = somaTotal / 1000000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' trilhões';
-        } else if (somaTotal > 1000000000000) {
+        } else if (somaTotal >= 1000000000000) {
             somaTotal = somaTotal / 1000000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' trilhão';
         } else if (somaTotal > 2000000000) {
             somaTotal = somaTotal / 1000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' bilhões';
-        } else if (somaTotal > 1000000000) {
+        } else if (somaTotal >= 1000000000) {
             somaTotal = somaTotal / 1000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' bilhão';
         } else if (somaTotal > 2000000) {
             somaTotal = somaTotal / 1000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' milhões';
-        }else if (somaTotal > 1000000) {
+        }else if (somaTotal >= 1000000) {
             somaTotal = somaTotal / 1000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' milhão';
         } else if (somaTotal > 1000) {
@@ -214,12 +328,14 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
             subtotal+= item.value;
         });
      	var total = 100 - subtotal
-        return total.toFixed(1);
+        return total.toFixed(2);
     }
 
     $scope.sumLeft = function(soma) {
         if (soma < 0) {
             return 'color: red'
+        } else if (soma = 0) {
+            return 'color: blue'
         } else {
             return 'color: green'
         };
@@ -233,7 +349,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
             soma += $scope.items[i].value;
         };
 
-        var divWidth = document.getElementById('canvas').clientWidth * 0.75;
+        var divWidth = document.getElementById('canvas').clientWidth * 0.9;
         $('#fullMarker').css('left', divWidth);
         $('#fullText').css('left', divWidth);
         var barWidth = ((divWidth / 100) * item.value.toFixed(1));
@@ -244,3 +360,4 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
 		
 
 }]);
+
