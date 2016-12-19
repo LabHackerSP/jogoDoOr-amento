@@ -2,20 +2,7 @@
 
 var app = angular.module('jogoDoOrcamento', []);
 
-app.directive('tooltip', function(){
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs){
-            $(element).hover(function(){
-                // on mouseenter
-                $(element).tooltip('show');
-            }, function(){
-                // on mouseleave
-                $(element).tooltip('hide');
-            });
-        }
-    };
-});
+
 
 app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
 
@@ -23,247 +10,305 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
     {
     	value: 0.2562461713,
     	name: 'Legislativa',
+        imageSrc: 'icons/i_04.png'
     }, 
     {
     	value: 1.137733,
     	name: 'Judiciária',
+        imageSrc: 'icons/i_21.png'
     }, 
     {
     	value: 0.2220800151,
     	name: 'Essencial à Justiça',
+        imageSrc: 'icons/i_24.png'
     }, 
     {
     	value: 0.9566523727,
     	name: 'Administração',
+        imageSrc: 'icons/i_27.png'
     }, 
     {
     	value: 2.053385986,
     	name: 'Defesa Nacional',
+        imageSrc: 'icons/i_18.png'
     }, 
     {
     	value: 0.276745865,
     	name: 'Segurança Pública',
+        imageSrc: 'icons/i_19.png'
     }, 
     {
     	value: 0.1059150841,
     	name: 'Relações Exteriores',
+        imageSrc: 'icons/i_08.png'
     }, 
     {
     	value: 2.65812695,
     	name: 'Assistência Social',
+        imageSrc: 'icons/i_12.png'
     }, 
     {
     	value: 19.56695764,
     	name: 'Previdência Social',
+        imageSrc: 'icons/i_03.png'
     }, 
     {
     	value: 3.430282079,
     	name: 'Saúde',
+        imageSrc: 'icons/i_09.png'
     }, 
     {
     	value: 2.538545403,
     	name: 'Trabalho',
+        imageSrc: 'icons/i_15.png'
     }, 
     {
     	value: 3.519114085,
     	name: 'Educação',
+        imageSrc: 'icons/i_06.png'
     }, 
     {
     	value: 0.07516554357,
     	name: 'Cultura',
+        imageSrc: 'icons/i_05.png'
     }, 
     {
     	value: 0.04441600302,
     	name: 'Direitos da Cidadania',
+        imageSrc: 'icons/i_17.png'
     }, 
     {
     	value: 0.08541539042,
     	name: 'Urbanismo',
+        imageSrc: 'icons/i_25.png'
     }, 
     {
     	value: 0.4236603365,
     	name: 'Habitação',
+        imageSrc: 'icons/i_23.png'
     }, 
     {
     	value: 0.02982705433,
     	name: 'Saneamento',
+        imageSrc: 'icons/i_02.png'
     }, 
     {
     	value: 0.2118301682,
     	name: 'Gestão Ambiental',
+        imageSrc: 'icons/i_16.png'
     }, 
     {
     	value: 0.2835790962,
     	name: 'Ciência e Tecnologia',
+        imageSrc: 'icons/i_13.png'
     }, 
     {
     	value: 1.028401301,
     	name: 'Agricultura',
+        imageSrc: 'icons/i_10.png'
     }, 
     {
     	value: 0.1366646247,
     	name: 'Organização Agrária',
+        imageSrc: 'icons/i_28.png'
     }, 
     {
     	value: 0.0649156967,
     	name: 'Indústria',
+        imageSrc: 'icons/i_22.png'
     }, 
     {
         value: 0.1810806277,
         name: 'Comércio e Serviços',
+        imageSrc: 'icons/i_22.png'
     },  
     {
     	value: 0.05124923425,
     	name: 'Comunicações',
+        imageSrc: 'icons/i_14.png'
     }, 
     {
     	value: 0.06833231233,
     	name: 'Energia',
+        imageSrc: 'icons/i_11.png'
     }, 
     {
     	value: 0.6218240422,
     	name: 'Transporte',
+        imageSrc: 'icons/i_07.png'
     }, 
     {
     	value: 0.05124923425,
     	name: 'Desporto e Lazer',
+        imageSrc: 'icons/i_21.png'
     }, 
     {
     	value: 58.08246548,
     	name: 'Encargos Especiais',
+        imageSrc: 'icons/i_26.png'
     }, 
     {
     	value: 1.838139202,
     	name: 'Reserva de Contingência',
+        imageSrc: 'icons/i_29.png'
     } ];
 
     $scope.ideal = [ 
     {
-        value: 1,
+        value: 2,
         name: 'Legislativa',
+        imageSrc: 'icons/i_04.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Judiciária',
+        imageSrc: 'icons/i_21.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Essencial à Justiça',
+        imageSrc: 'icons/i_24.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Administração',
+        imageSrc: 'icons/i_27.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Defesa Nacional',
+        imageSrc: 'icons/i_18.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Segurança Pública',
+        imageSrc: 'icons/i_19.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Relações Exteriores',
+        imageSrc: 'icons/i_08.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Assistência Social',
+        imageSrc: 'icons/i_12.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Previdência Social',
+        imageSrc: 'icons/i_03.png'
     }, 
     {
-        value: 15,
+        value: 2,
         name: 'Saúde',
+        imageSrc: 'icons/i_09.png'
     }, 
     {
         value: 2,
         name: 'Trabalho',
+        imageSrc: 'icons/i_15.png'
     }, 
     {
-        value: 25,
+        value: 2,
         name: 'Educação',
+        imageSrc: 'icons/i_06.png'
     }, 
     {
-        value: 6,
+        value: 2,
         name: 'Cultura',
+        imageSrc: 'icons/i_05.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Direitos da Cidadania',
+        imageSrc: 'icons/i_17.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Urbanismo',
+        imageSrc: 'icons/i_25.png'
     }, 
     {
         value: 2,
         name: 'Habitação',
+        imageSrc: 'icons/i_23.png'
     }, 
     {
         value: 2,
         name: 'Saneamento',
+        imageSrc: 'icons/i_02.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Gestão Ambiental',
+        imageSrc: 'icons/i_16.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Ciência e Tecnologia',
+        imageSrc: 'icons/i_13.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Agricultura',
+        imageSrc: 'icons/i_10.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Organização Agrária',
+        imageSrc: 'icons/i_28.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Indústria',
+        imageSrc: 'icons/i_22.png'
     }, 
     {
         value: 2,
         name: 'Comércio e Serviços',
+        imageSrc: 'icons/i_22.png'
     },  
     {
         value: 2,
         name: 'Comunicações',
+        imageSrc: 'icons/i_14.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Energia',
+        imageSrc: 'icons/i_11.png'
     }, 
     {
-        value: 1,
+        value: 2,
         name: 'Transporte',
+        imageSrc: 'icons/i_07.png'
     }, 
     {
-        value: 4,
+        value: 2,
         name: 'Desporto e Lazer',
+        imageSrc: 'icons/i_21.png'
     }, 
     {
-        value: 0.9,
+        value: 2,
         name: 'Encargos Especiais',
+        imageSrc: 'icons/i_26.png'
     }, 
     {
-        value: 0.1,
+        value: 2,
         name: 'Reserva de Contingência',
+        imageSrc: 'icons/i_29.png'
     } ];
 
     $scope.items = $scope.ideal;
 
     $scope.toIdeal = function () {
         $scope.items = $scope.ideal;
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
     }
     $scope.toReal = function () {
         $scope.items = $scope.gabarito;
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
     }
 
 
@@ -339,6 +384,13 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
         } else {
             return 'color: green'
         };
+    }
+
+    $scope.barMouseEnter = function(i) {
+        $scope.items[i].color = 'background-color: #ffffa8;'
+    }
+    $scope.barMouseLeave = function(i) {
+        $scope.items[i].color = 'background-color: initial'
     }
 
 
