@@ -155,147 +155,147 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
 
     $scope.ideal = [ 
     {
-        value: 2,
+        value: 1,
         name: 'Legislativa',
         imageSrc: 'icons/i_04.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Judiciária',
         imageSrc: 'icons/i_21.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Essencial à Justiça',
         imageSrc: 'icons/i_24.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Administração',
         imageSrc: 'icons/i_27.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Defesa Nacional',
         imageSrc: 'icons/i_18.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Segurança Pública',
         imageSrc: 'icons/i_19.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Relações Exteriores',
         imageSrc: 'icons/i_08.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Assistência Social',
         imageSrc: 'icons/i_12.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Previdência Social',
         imageSrc: 'icons/i_03.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Saúde',
         imageSrc: 'icons/i_09.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Trabalho',
         imageSrc: 'icons/i_15.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Educação',
         imageSrc: 'icons/i_06.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Cultura',
         imageSrc: 'icons/i_05.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Direitos da Cidadania',
         imageSrc: 'icons/i_17.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Urbanismo',
         imageSrc: 'icons/i_25.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Habitação',
         imageSrc: 'icons/i_23.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Saneamento',
         imageSrc: 'icons/i_02.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Gestão Ambiental',
         imageSrc: 'icons/i_16.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Ciência e Tecnologia',
         imageSrc: 'icons/i_13.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Agricultura',
         imageSrc: 'icons/i_10.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Organização Agrária',
         imageSrc: 'icons/i_28.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Indústria',
         imageSrc: 'icons/i_22.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Comércio e Serviços',
         imageSrc: 'icons/i_22.png'
     },  
     {
-        value: 2,
+        value: 1,
         name: 'Comunicações',
         imageSrc: 'icons/i_14.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Energia',
         imageSrc: 'icons/i_11.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Transporte',
         imageSrc: 'icons/i_07.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Desporto e Lazer',
         imageSrc: 'icons/i_21.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Encargos Especiais',
         imageSrc: 'icons/i_26.png'
     }, 
     {
-        value: 2,
+        value: 1,
         name: 'Reserva de Contingência',
         imageSrc: 'icons/i_29.png'
     } ];
@@ -403,24 +403,12 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
 
     $scope.boxMouseEnter = function(i) {
         $scope.items[i].color = 'background-color: #ffffa8;'
-        var styles = {
-          marginTop: "-10px",
-          height: '135px',
-          '-webkit-filter': 'brightness(0%)',
-          filter: 'brightness(0%)'
-        }
-        $('.bar').eq(i).css(styles);
+        $('.bar').eq(i).addClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 1);
     }
     $scope.boxMouseLeave = function(i) {
         $scope.items[i].color = 'background-color: #fff'
-        var styles = {
-          marginTop: "0px",
-          height: '125px',
-          '-webkit-filter': 'brightness(100%)',
-          filter: 'brightness(100%)'
-        }
-        $('.bar').eq(i).css(styles);
+        $('.bar').eq(i).removeClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 0);
     }
 
