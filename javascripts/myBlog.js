@@ -320,19 +320,19 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
         if (somaTotal > 2000000000000) {
             somaTotal = somaTotal / 1000000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' trilhões';
-        } else if (somaTotal > 1000000000000) {
+        } else if (somaTotal >= 1000000000000) {
             somaTotal = somaTotal / 1000000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' trilhão';
         } else if (somaTotal > 2000000000) {
             somaTotal = somaTotal / 1000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' bilhões';
-        } else if (somaTotal > 1000000000) {
+        } else if (somaTotal >= 1000000000) {
             somaTotal = somaTotal / 1000000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' bilhão';
         } else if (somaTotal > 2000000) {
             somaTotal = somaTotal / 1000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' milhões';
-        }else if (somaTotal > 1000000) {
+        } else if (somaTotal >= 1000000) {
             somaTotal = somaTotal / 1000000;
             return $filter('currency')(somaTotal, 'R$', 2) + ' milhão';
         } else if (somaTotal > 1000) {
@@ -372,29 +372,60 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
             angular.forEach(list , function(item){
             subtotal+= item.value;
         });
-     	var total = 100 - subtotal
+     	var total = subtotal
+        return total.toFixed(2);
+    }
+    $scope.sum2 = function(list) {
+        var subtotal=0;
+            angular.forEach(list , function(item){
+            subtotal+= item.value;
+        });
+        var total = 100 - subtotal
         return total.toFixed(2);
     }
 
-    $scope.sumLeft = function(soma) {
-        if (soma < 0) {
-            return 'color: red'
-        } else if (soma = 0) {
-            return 'color: blue'
-        } else {
-            return 'color: green'
-        };
+    $scope.barLeft = function(soma) {
+        if (soma > 100) {
+            return 'background-color: #e26969; width: 100 vw'
+        } else if (soma == 100) {
+            return 'background-color: #68afbf; width: 100 vw'
+        } else if (soma < 100) {
+            return 'background-color: #68bf68; width:' + soma + 'vw'
+        }
     }
 
     $scope.barMouseEnter = function(i) {
         $scope.items[i].color = 'background-color: #ffffa8;'
     }
     $scope.barMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: initial'
+        $scope.items[i].color = 'background-color: #fff'
+    }
+
+    $scope.boxMouseEnter = function(i) {
+        $scope.items[i].color = 'background-color: #ffffa8;'
+        var styles = {
+          marginTop: "-10px",
+          height: '135px',
+          '-webkit-filter': 'brightness(0%)',
+          filter: 'brightness(0%)'
+        }
+        $('.bar').eq(i).css(styles);
+        $('.bar .tooltips').eq(i).css('opacity', 1);
+    }
+    $scope.boxMouseLeave = function(i) {
+        $scope.items[i].color = 'background-color: #fff'
+        var styles = {
+          marginTop: "0px",
+          height: '125px',
+          '-webkit-filter': 'brightness(100%)',
+          filter: 'brightness(100%)'
+        }
+        $('.bar').eq(i).css(styles);
+        $('.bar .tooltips').eq(i).css('opacity', 0);
     }
 
 
-    $scope.style = function(item) {
+    $scope.barStyle = function(item) {
      	var soma=0;
 
         for (i in $scope.items) {

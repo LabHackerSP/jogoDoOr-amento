@@ -37,6 +37,32 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0px;
 }
 
+#barraRestante {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    border-top: 1px solid #dedede;
+    width: 100vw;
+    height: 46px;
+}
+
+#barraRestante div {
+    background-color: green;
+    height: 100%;
+    position: relative;
+}
+
+#barraRestante p {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 50%;
+    color: #000;
+    font-weight: 400;
+    transform: translate(-50%, 0);
+}
+
 #canvas {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -73,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fullMarker {
     height: 135px;
-    border-right: 1px dashed red;
+    border-right: 2px dashed red;
     top: -5px;
     position: absolute;
     text-align: right;
@@ -99,24 +125,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bar:hover{
-    background-color: black !important;
-    margin-top: -10px;
-    height: 135px;
+    -webkit-filter: brightness(0%); /* Safari 6.0 - 9.0 */
+    filter: brightness(0%);
+    margin-top: -10px !important;
+    height: 135px !important;
 
 }
 
 .tooltips {
-    display: none;
-    color: #555;
+    opacity: 0;
+    color: #000;
     white-space: nowrap;
     padding: 5px;
     border-radius: 4px;
     font-size: 12px;
-    box-shadow: inset 0px -3px 0px #ff237a;
+    box-shadow: inset 0px -3px 0px #000;
     transform: translate(0, -30px);
 }
 .bar:hover .tooltips    {
-    display: block;
+    opacity: 1 !important;
 }
 
 div.bar:nth-of-type(5n+0) {
@@ -139,9 +166,5 @@ div.bar:nth-of-type(5n+4) {
 
 
 #footer {
-	color: #252525;
-	background-color: #5cb85c;
-	padding-top: 30px;
-	padding-bottom: 40px;
-	margin-top: 30px;
+    height: 80px;
 }
