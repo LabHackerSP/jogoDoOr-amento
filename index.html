@@ -14,10 +14,13 @@
 <div class="container">
 	<div class="row">
 		<div id="header" class="col-sm-12">
-			<h1 class="text-center">Jogo do Orçamento</h1>
-			<h4 style="display: inline-block;">Orçamento total:</h4>
-			<input style="display: inline-block;" ng-model='orcTotal' type="number">
-			<h5 style="display: inline-block;"> = {{valueTotal(orcTotal)}}</h5>
+			<h1 class="pull-left">Jogo do Orçamento</h1>
+			<div class="pull-right">
+				<span style="display: inline-block;"><b>Orçamento total:</b></span>
+				<input style="display: inline-block;" ng-model='orcTotal' type="number">
+				<span style="display: inline-block;"> ({{valueTotal(orcTotal)}})</span>
+			</div>
+				
 
 		</div>
 
@@ -37,7 +40,7 @@
 		<div class="col-md-12">
 			<ul id="myTabs" class="nav nav-tabs nav-justified">
 			  <li role="presentation" class="active"><a href="#" ng-click="toIdeal()">Ideal</a></li>
-			  <li role="presentation"><a href="#">Imaginário</a></li>
+<!-- 			  <li role="presentation"><a href="#">Imaginário</a></li> -->
 			  <li role="presentation"><a href="#" ng-click="toReal()">Real</a></li>
 			</ul>
 		</div>
@@ -77,7 +80,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 <script  src="javascripts/myBlog.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
 <script type="text/javascript">
 $( window ).load(function() {
 

@@ -1,11 +1,12 @@
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Signika', sans-serif;
 }
 
 body	{
 	font-family: Helvetica, sans-serif;
 	padding-top: 20px;
-    background-color: #efefef;
+    background: url("https://subtlepatterns.com/patterns/noisy_grid.png");
+    text-rendering: geometricPrecision;
 
 }
 
@@ -25,16 +26,19 @@ h1, h2, h3, h4, h5, h6 {
 
 #header { 
 	margin-bottom: 30px;
-	text-align: center;
+    padding: 30px;
+    background-color: #556270;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-#header h3 {
-	margin-top: 0px;
+#header h1, p {
+    margin: 0px;
 }
 
-#header h1 {
-
-	margin-bottom: 0px;
+#header div {
+    margin-top: 11px;
 }
 
 #barraRestante {
@@ -58,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 100%;
     z-index: 999;
-    bottom: 0;
+    bottom: 11px;
     left: 50%;
     color: #000;
     font-weight: 400;
@@ -89,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 7px;
     margin-bottom: 8px;
     padding: 0 10px 10px 10px;
-    background-color: #fafafa
+    background-color: #fff
 }
 
 .itemIcon {
