@@ -566,7 +566,7 @@ $scope.imaginario = [
         $('.bar .tooltips').eq(i).css('opacity', 1);
     }
     $scope.barMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: #fafafa';
+        $scope.items[i].color = 'background-color: #f6f6f6';
         $('.bar').eq(i).removeClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 0);
     }
@@ -575,7 +575,7 @@ $scope.imaginario = [
         $scope.items[i].color = 'background-color: #fff;'
     }
     $scope.boxMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: #fafafa'
+        $scope.items[i].color = 'background-color: #f6f6f6'
     }
 
     $scope.barMouseEnterComp = function(i) {
@@ -585,7 +585,7 @@ $scope.imaginario = [
         $('.bimaginario').eq(i).addClass('barhover');
     }
     $scope.barMouseLeaveComp = function(i) {
-        $scope.items[i].color = 'background-color: #fafafa;'
+        $scope.items[i].color = 'background-color: #f6f6f6;'
         $('.bgabarito').eq(i).removeClass('barhover');
         $('.bideal').eq(i).removeClass('barhover');
         $('.bimaginario').eq(i).removeClass('barhover');

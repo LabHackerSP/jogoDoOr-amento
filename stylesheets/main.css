@@ -3,6 +3,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body	{
+    margin-top: 100px;
 	font-family: Helvetica, sans-serif;
 	padding-top: 20px;
     background: url("https://subtlepatterns.com/patterns/rough_diagonal.png");
@@ -15,7 +16,6 @@ a {
 }
 
 a:hover {
-
 	text-decoration: none
 }
 
@@ -24,22 +24,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-#header { 
-	margin-bottom: 30px;
+header { 
+	position: fixed;
+    top: 0;
+    left: 0;
+    background: #333;
+    width: 100%;
+    color: #fff;
     padding: 30px;
-    background-color: #556270;
-    color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    z-index: 999;
 }
 
-#header h1, p {
+header ul {
+    float: right;
+    list-style: none;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+header ul li {
+    display: inline;
+    font-size: 14px;
+    padding: 15px;
+}
+
+header h1 {
+    font-size: 26px;
     margin: 0px;
 }
 
-#header div {
-    margin-top: 11px;
+header a:hover {
+    color: #fffba0;
 }
+
 
 #barraRestante {
     position: fixed;
@@ -69,11 +85,11 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, 0);
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
-    background: #fafafa;
-    border-bottom-color: #fafafa !important;
+    background: #f6f6f6;
+    border-bottom-color: #f6f6f6 !important;
 }
 #boxRow {
-    background: #fafafa;
+    background: #f6f6f6;
     border-radius: 4px;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
@@ -97,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 7px;
     margin-bottom: 8px;
     padding: 0 10px 10px 10px;
-    background-color: #fafafa
+    background-color: #f6f6f6
 }
 
 .itemIcon {

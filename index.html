@@ -11,17 +11,22 @@
 </head>
 <body ng-app='jogoDoOrcamento'>
 <div id="wrapper" ng-controller='GameCtrl'>
-<div class="container">
-	<div class="row">
-		<div id="header" class="col-sm-12">
-			<h1 style="display: inline">Jogo do Orçamento</h1>
-			<ul>
-				<li><a href="#orc">Montar Orçamento</a></li>
-				<li><a href="#comp">Comparar Orçamento</a></li>
-			</ul>
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 style="display: inline">Jogo do Orçamento</h1>
+				<ul>
+					<li><a href="#orc">Montar Orçamento</a></li>
+					<li><a href="#comp">Comparar Orçamento</a></li>
+				</ul>		
+			</div>
 		</div>
-	</div> <!-- end row -->
-</div> <!-- end container -->
+	</div>
+
+		
+
+</header> <!-- end container -->
 
 <div ng-view></div>			
 
