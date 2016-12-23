@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 body	{
 	font-family: Helvetica, sans-serif;
 	padding-top: 20px;
-    background: url("https://subtlepatterns.com/patterns/noisy_grid.png");
+    background: url("https://subtlepatterns.com/patterns/rough_diagonal.png");
     text-rendering: geometricPrecision;
 
 }
@@ -68,9 +68,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     transform: translate(-50%, 0);
 }
-
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    background: #fafafa;
+    border-bottom-color: #fafafa !important;
+}
 #boxRow {
-    background: white;
+    background: #fafafa;
     border-radius: 4px;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
@@ -89,12 +92,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-box {
     min-height: 100px;
-    border: 1px solid #dedede;
+    border: 1px solid #e7e7e7;
     border-radius: 5px;
     margin-top: 7px;
     margin-bottom: 8px;
     padding: 0 10px 10px 10px;
-    background-color: #fff
+    background-color: #fafafa
 }
 
 .itemIcon {
@@ -118,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fullText {
     position: absolute;
-    bottom: -25px;
+    top: -25px;
     color: red;
     font-weight: bolder;
     margin-left: 5px;
@@ -126,10 +129,24 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 12px;
 }
 
+.compCanvas #canvas {
+    height: 65px;
+}
+
+.compCanvas .bar {
+
+    height: 65px;
+}
+
+.compCanvas .bar:hover, .compCanvas .barhover {
+    margin-top: -10px !important;
+    height: 75px !important;
+}
+
 #canvas {
     height: 165px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 35px;
+    margin-bottom: 15px;
     padding: 0;
     background-color: #fafafa;
 }
@@ -151,11 +168,10 @@ h1, h2, h3, h4, h5, h6 {
 .tooltips {
     opacity: 0;
     white-space: nowrap;
-    padding: 5px;
-    border-radius: 4px;
+    padding: 0px;
     font-size: 12px;
-    box-shadow: inset 0px -3px 0px;
-    transform: translate(0, -30px);
+    border-bottom: 5px solid black;
+    transform: translate(0, -21px);
 }
 
 
@@ -165,20 +181,43 @@ h1, h2, h3, h4, h5, h6 {
     filter: brightness(100%);
 }
 
-div.bar:nth-of-type(5n+0) {
-    background-color: #556270;
+div.bar:nth-of-type(2n+0) {
+    background-color: #6dc1c3;
 }
-div.bar:nth-of-type(5n+1) {
-    background-color: #4ECDC4;
+div.bar:nth-of-type(2n+1) {
+    background-color: #79D5D8;
 }
-div.bar:nth-of-type(5n+2) {
-    background-color: #C7F464;
 }
-div.bar:nth-of-type(5n+3) {
-    background-color: #FF6B6B;
+
+div.bar.bideal:nth-of-type(2n+0) {
+    background-color: #6dc1c3;
 }
-div.bar:nth-of-type(5n+4) {
-    background-color: #C44D58;
+div.bar.bideal:nth-of-type(2n+1) {
+    background-color: #79D5D8;
+}
+
+div.bar.bimaginario:nth-of-type(2n+0) {
+    background-color: #7ac334;
+}
+div.bar.bimaginario:nth-of-type(2n+1) {
+    background-color: #82D831;
+}
+
+div.bar.bgabarito:nth-of-type(2n+0) {
+    background-color: #E54747;
+}
+div.bar.bgabarito:nth-of-type(2n+1) {
+    background-color: #C42D2D;
+}
+
+
+.compBarTitle {
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 .form-box-comp {
@@ -189,24 +228,36 @@ div.bar:nth-of-type(5n+4) {
     padding: 0 10px 10px 10px;
 }
 
-.barsBoxWrapper {
-    padding-bottom: 15px;
+.form-box-comp .catTitle {
+    transform: none;
+    text-transform: uppercase;
+    margin-top: 18px;
+    text-align: center;
 }
 
-.barIdeal, .barReal {
-    margin-top: 10px;
-    width: 48%;
+.barsBoxWrapper {
+    border-bottom: 1px solid #cdcdcd;
+    padding-left: 8px;
+}
+
+.barIdeal, .barReal, .barImaginario {
+    margin-top: 60px;
+    width: 30%;
     display: inline-block;
     position: relative;
 /*    float: left;*/
 }
 
 .barIdeal {
-    background-color: #00bcd4
+    background-color: #79D5D8
 }
 
 .barReal {
-    background-color: #FF9800;
+    background-color: #C42D2D;
+}
+
+.barImaginario {
+    background-color: #82D831;
 }
 
 .compBarValue {
@@ -214,7 +265,7 @@ div.bar:nth-of-type(5n+4) {
     width: 100%;
     text-align: center;
     position: absolute;
-    bottom: -20px;
+    top: -35px;
     font-size: 11px;
     color: #666;
 }

@@ -17,34 +17,9 @@ app.config(function($routeProvider) {
 
 app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $route){
 
-    $scope.$on('$routeChangeSuccess', function() {
-
-        jQuery.fn.equalHeights = function() {
-            var maxHeight = 0;
-            $this = (this).height();           
-            jQuery(".equalize").each(function(){
-              if (jQuery(this).height() > maxHeight) { maxHeight = jQuery(this).height(); }
-            });         
-            jQuery(this).height(maxHeight);
-        };
 
 
-
-        if(jQuery(window).width() > 767) {
-             jQuery(document).ready(function() {
-                jQuery('.equalize').equalHeights();
-            });
-
-            jQuery(function() {
-              jQuery.fn.almComplete = function(alm){
-                jQuery('.equalize').equalHeights();
-              };
-            });
-
-        };
-    });
-
-    $scope.gabarito = [ 
+$scope.gabarito = [ 
     {
     	value: 0.2562461713,
     	name: 'Legislativa',
@@ -189,7 +164,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
     	value: 1.838139202,
     	name: 'Reserva de Contingência',
         imageSrc: 'icons/i_29.png'
-    } ];
+} ];
 
 $scope.ideal = [ 
     {
@@ -483,15 +458,23 @@ $scope.imaginario = [
         value: 2,
         name: 'Reserva de Contingência',
         imageSrc: 'icons/i_29.png'
-    } ];
+} ];
 
     $scope.items = $scope.ideal;
 
     $scope.toIdeal = function () {
         $scope.items = $scope.ideal;
+        $scope.barName = 'ideal';
+
+        $('#myTabs li:first-child').addClass('active');
+        $('#myTabs li:last-child').removeClass('active');
     }
-    $scope.toReal = function () {
+    $scope.toImaginario = function () {
         $scope.items = $scope.imaginario;
+        $scope.barName = 'imaginario';
+
+        $('#myTabs li:last-child').addClass('active');
+        $('#myTabs li:first-child').removeClass('active');
     }
 
 
@@ -578,20 +561,34 @@ $scope.imaginario = [
     }
 
     $scope.barMouseEnter = function(i) {
-        $scope.items[i].color = 'background-color: #ddd;'
-    }
-    $scope.barMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: #fff'
-    }
-
-    $scope.boxMouseEnter = function(i) {
-        $scope.items[i].color = 'background-color: #ddd;'
+        $scope.items[i].color = 'background-color: #fff;';
         $('.bar').eq(i).addClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 1);
     }
-    $scope.boxMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: #fff'
+    $scope.barMouseLeave = function(i) {
+        $scope.items[i].color = 'background-color: #fafafa';
         $('.bar').eq(i).removeClass('barhover');
+        $('.bar .tooltips').eq(i).css('opacity', 0);
+    }
+
+    $scope.boxMouseEnter = function(i) {
+        $scope.items[i].color = 'background-color: #fff;'
+    }
+    $scope.boxMouseLeave = function(i) {
+        $scope.items[i].color = 'background-color: #fafafa'
+    }
+
+    $scope.barMouseEnterComp = function(i) {
+        $scope.items[i].color = 'background-color: #fff;'
+        $('.bgabarito').eq(i).addClass('barhover');
+        $('.bideal').eq(i).addClass('barhover');
+        $('.bimaginario').eq(i).addClass('barhover');
+    }
+    $scope.barMouseLeaveComp = function(i) {
+        $scope.items[i].color = 'background-color: #fafafa;'
+        $('.bgabarito').eq(i).removeClass('barhover');
+        $('.bideal').eq(i).removeClass('barhover');
+        $('.bimaginario').eq(i).removeClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 0);
     }
 
@@ -628,47 +625,89 @@ $scope.imaginario = [
 
 
     $scope.barStyleComparar = function(list, i) {
-        if ($scope.gabarito[i].value >= $scope.ideal[i].value) {
+        // Se o gabarito for o maior
+        if ($scope.gabarito[i].value >= $scope.ideal[i].value && $scope.gabarito[i].value >= $scope.imaginario[i].value ) {
             var bigger = $scope.gabarito[i].value
             if (list === $scope.ideal) {
                 
-                console.log('lista: ideal, maior n: gabarito')
+                // console.log('lista: ideal, maior n: gabarito')
                 
                 var height = $scope.ideal[i].value * 25 / $scope.gabarito[i].value;
                 var h = 'height :' +  String(height) + 'vh';
                 return h
 
+            } else if (list === $scope.imaginario) {
+                
+                // console.log('lista: imaginario, maior n: gabarito')
+                
+                var height = $scope.imaginario[i].value * 25 / $scope.gabarito[i].value;
+                var h = 'height :' +  String(height) + 'vh';
+                return h
+
             } else {
                 
-                console.log('lista: gabarito, maior n: gabarito')
+                // console.log('lista: gabarito, maior n: gabarito')
                 
                 var h = 'height : 25vh';
                 return h
 
             };
-        } else {
+        // Se o ideal for o maior
+        } else if ($scope.ideal[i].value >= $scope.gabarito[i].value && $scope.ideal[i].value >= $scope.imaginario[i].value ) {
             var bigger = $scope.ideal[i].value
             if (list === $scope.ideal) {
                 
-                console.log('lista: ideal, maior n: ideal')
+                // console.log('lista: ideal, maior n: ideal')
                 
                 var h = 'height : 25vh';
                 return h
 
+            } else if (list === $scope.imaginario){
+                
+                // console.log('lista: imaginario, maior n: ideal')
+                
+                var height = $scope.imaginario[i].value * 25 / $scope.ideal[i].value;
+                var h = 'height :' +  String(height) + 'vh';
+                return h
+
             } else {
                 
-                console.log('lista: gabarito, maior n: ideal')
+                // console.log('lista: gabarito, maior n: ideal')
                 
                 var height = $scope.gabarito[i].value * 25 / $scope.ideal[i].value;
                 var h = 'height :' +  String(height) + 'vh';
                 return h
 
             };
-        }
-        
-                var height = list[i].value.toFixed(1) * 3;
+        // Se o imaginario for o maior
+        } else {
+            var bigger = $scope.imaginario[i].value
+            if (list === $scope.imaginario) {
+                
+                // console.log('lista: imaginario, maior n: ideal')
+                
+                var h = 'height : 25vh';
+                return h
+
+            } else if (list === $scope.ideal){
+                
+                // console.log('lista: ideal, maior n: ideal')
+                
+                var height = $scope.ideal[i].value * 25 / $scope.imaginario[i].value;
                 var h = 'height :' +  String(height) + 'vh';
                 return h
+
+            } else {
+                
+                // console.log('lista: gabarito, maior n: ideal')
+                
+                var height = $scope.gabarito[i].value * 25 / $scope.imaginario[i].value;
+                var h = 'height :' +  String(height) + 'vh';
+                return h
+
+            };
+        }
+        
     }
 
 
