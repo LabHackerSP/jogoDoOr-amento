@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-box {
+    min-height: 100px;
     border: 1px solid #dedede;
     border-radius: 5px;
     margin-top: 7px;
@@ -105,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #fullMarker {
-    height: 135px;
+    height: 175px;
     border-right: 2px dashed red;
     top: -5px;
     position: absolute;
@@ -126,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #canvas {
-    height: 125px;
+    height: 165px;
     margin-top: 40px;
     margin-bottom: 40px;
     padding: 0;
@@ -134,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bar {
-    height: 125px;
+    height: 165px;
     float: left;
     transition: 0.1s;
 }
@@ -143,11 +144,9 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-filter: brightness(50%); /* Safari 6.0 - 9.0 */
     filter: brightness(50%);
     margin-top: -10px !important;
-    height: 135px !important;
+    height: 175px !important;
 
 }
-
-
 
 .tooltips {
     opacity: 0;
@@ -182,6 +181,43 @@ div.bar:nth-of-type(5n+4) {
     background-color: #C44D58;
 }
 
+.form-box-comp {
+    min-height: 100px;
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-bottom: 8px;
+    padding: 0 10px 10px 10px;
+}
+
+.barsBoxWrapper {
+    padding-bottom: 15px;
+}
+
+.barIdeal, .barReal {
+    margin-top: 10px;
+    width: 48%;
+    display: inline-block;
+    position: relative;
+/*    float: left;*/
+}
+
+.barIdeal {
+    background-color: #00bcd4
+}
+
+.barReal {
+    background-color: #FF9800;
+}
+
+.compBarValue {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: -20px;
+    font-size: 11px;
+    color: #666;
+}
 
 
 

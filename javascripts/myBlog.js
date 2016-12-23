@@ -1,10 +1,48 @@
 
 
-var app = angular.module('jogoDoOrcamento', []);
+var app = angular.module('jogoDoOrcamento', ["ngRoute"]);
+
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "templates/orc.html"
+    })
+    .when("/orc", {
+        templateUrl : "templates/orc.html"
+    })
+    .when("/comp", {
+        templateUrl : "templates/comp.html"
+    });
+});
+
+app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $route){
+
+    $scope.$on('$routeChangeSuccess', function() {
+
+        jQuery.fn.equalHeights = function() {
+            var maxHeight = 0;
+            $this = (this).height();           
+            jQuery(".equalize").each(function(){
+              if (jQuery(this).height() > maxHeight) { maxHeight = jQuery(this).height(); }
+            });         
+            jQuery(this).height(maxHeight);
+        };
 
 
 
-app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
+        if(jQuery(window).width() > 767) {
+             jQuery(document).ready(function() {
+                jQuery('.equalize').equalHeights();
+            });
+
+            jQuery(function() {
+              jQuery.fn.almComplete = function(alm){
+                jQuery('.equalize').equalHeights();
+              };
+            });
+
+        };
+    });
 
     $scope.gabarito = [ 
     {
@@ -153,7 +191,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
         imageSrc: 'icons/i_29.png'
     } ];
 
-    $scope.ideal = [ 
+$scope.ideal = [ 
     {
         value: 1,
         name: 'Legislativa',
@@ -298,17 +336,162 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
         value: 1,
         name: 'Reserva de Contingência',
         imageSrc: 'icons/i_29.png'
+} ];
+
+$scope.imaginario = [ 
+    {
+        value: 2,
+        name: 'Legislativa',
+        imageSrc: 'icons/i_04.png'
+    }, 
+    {
+        value: 2,
+        name: 'Judiciária',
+        imageSrc: 'icons/i_21.png'
+    }, 
+    {
+        value: 2,
+        name: 'Essencial à Justiça',
+        imageSrc: 'icons/i_24.png'
+    }, 
+    {
+        value: 2,
+        name: 'Administração',
+        imageSrc: 'icons/i_27.png'
+    }, 
+    {
+        value: 2,
+        name: 'Defesa Nacional',
+        imageSrc: 'icons/i_18.png'
+    }, 
+    {
+        value: 2,
+        name: 'Segurança Pública',
+        imageSrc: 'icons/i_19.png'
+    }, 
+    {
+        value: 2,
+        name: 'Relações Exteriores',
+        imageSrc: 'icons/i_08.png'
+    }, 
+    {
+        value: 2,
+        name: 'Assistência Social',
+        imageSrc: 'icons/i_12.png'
+    }, 
+    {
+        value: 2,
+        name: 'Previdência Social',
+        imageSrc: 'icons/i_03.png'
+    }, 
+    {
+        value: 2,
+        name: 'Saúde',
+        imageSrc: 'icons/i_09.png'
+    }, 
+    {
+        value: 2,
+        name: 'Trabalho',
+        imageSrc: 'icons/i_15.png'
+    }, 
+    {
+        value: 2,
+        name: 'Educação',
+        imageSrc: 'icons/i_06.png'
+    }, 
+    {
+        value: 2,
+        name: 'Cultura',
+        imageSrc: 'icons/i_05.png'
+    }, 
+    {
+        value: 2,
+        name: 'Direitos da Cidadania',
+        imageSrc: 'icons/i_17.png'
+    }, 
+    {
+        value: 2,
+        name: 'Urbanismo',
+        imageSrc: 'icons/i_25.png'
+    }, 
+    {
+        value: 2,
+        name: 'Habitação',
+        imageSrc: 'icons/i_23.png'
+    }, 
+    {
+        value: 2,
+        name: 'Saneamento',
+        imageSrc: 'icons/i_02.png'
+    }, 
+    {
+        value: 2,
+        name: 'Gestão Ambiental',
+        imageSrc: 'icons/i_16.png'
+    }, 
+    {
+        value: 2,
+        name: 'Ciência e Tecnologia',
+        imageSrc: 'icons/i_13.png'
+    }, 
+    {
+        value: 2,
+        name: 'Agricultura',
+        imageSrc: 'icons/i_10.png'
+    }, 
+    {
+        value: 2,
+        name: 'Organização Agrária',
+        imageSrc: 'icons/i_28.png'
+    }, 
+    {
+        value: 2,
+        name: 'Indústria',
+        imageSrc: 'icons/i_22.png'
+    }, 
+    {
+        value: 2,
+        name: 'Comércio e Serviços',
+        imageSrc: 'icons/i_22.png'
+    },  
+    {
+        value: 2,
+        name: 'Comunicações',
+        imageSrc: 'icons/i_14.png'
+    }, 
+    {
+        value: 2,
+        name: 'Energia',
+        imageSrc: 'icons/i_11.png'
+    }, 
+    {
+        value: 2,
+        name: 'Transporte',
+        imageSrc: 'icons/i_07.png'
+    }, 
+    {
+        value: 2,
+        name: 'Desporto e Lazer',
+        imageSrc: 'icons/i_21.png'
+    }, 
+    {
+        value: 2,
+        name: 'Encargos Especiais',
+        imageSrc: 'icons/i_26.png'
+    }, 
+    {
+        value: 2,
+        name: 'Reserva de Contingência',
+        imageSrc: 'icons/i_29.png'
     } ];
 
     $scope.items = $scope.ideal;
 
     $scope.toIdeal = function () {
         $scope.items = $scope.ideal;
-        $('[data-toggle="tooltip"]').tooltip();
     }
     $scope.toReal = function () {
-        $scope.items = $scope.gabarito;
-        $('[data-toggle="tooltip"]').tooltip();
+        $scope.items = $scope.imaginario;
     }
 
 
@@ -395,14 +578,14 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
     }
 
     $scope.barMouseEnter = function(i) {
-        $scope.items[i].color = 'background-color: #ffffa8;'
+        $scope.items[i].color = 'background-color: #ddd;'
     }
     $scope.barMouseLeave = function(i) {
         $scope.items[i].color = 'background-color: #fff'
     }
 
     $scope.boxMouseEnter = function(i) {
-        $scope.items[i].color = 'background-color: #ffffa8;'
+        $scope.items[i].color = 'background-color: #ddd;'
         $('.bar').eq(i).addClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 1);
     }
@@ -427,6 +610,67 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter){
         var s = 'width :' +  String(barWidth) + 'px';
         return s
     }
+
+    $scope.barStyleComp = function(item) {
+        var soma=0;
+
+        for (i in $scope.items) {
+            soma += $scope.items[i].value;
+        };
+
+        var divWidth = document.getElementById('canvas').clientWidth * 0.998;
+        $('#fullMarker').css('left', divWidth);
+        $('#fullText').css('left', divWidth);
+        var barWidth = ((divWidth / 100) * item.value.toFixed(1));
+        var s = 'width :' +  String(barWidth) + 'px';
+        return s
+    }
+
+
+    $scope.barStyleComparar = function(list, i) {
+        if ($scope.gabarito[i].value >= $scope.ideal[i].value) {
+            var bigger = $scope.gabarito[i].value
+            if (list === $scope.ideal) {
+                
+                console.log('lista: ideal, maior n: gabarito')
+                
+                var height = $scope.ideal[i].value * 25 / $scope.gabarito[i].value;
+                var h = 'height :' +  String(height) + 'vh';
+                return h
+
+            } else {
+                
+                console.log('lista: gabarito, maior n: gabarito')
+                
+                var h = 'height : 25vh';
+                return h
+
+            };
+        } else {
+            var bigger = $scope.ideal[i].value
+            if (list === $scope.ideal) {
+                
+                console.log('lista: ideal, maior n: ideal')
+                
+                var h = 'height : 25vh';
+                return h
+
+            } else {
+                
+                console.log('lista: gabarito, maior n: ideal')
+                
+                var height = $scope.gabarito[i].value * 25 / $scope.ideal[i].value;
+                var h = 'height :' +  String(height) + 'vh';
+                return h
+
+            };
+        }
+        
+                var height = list[i].value.toFixed(1) * 3;
+                var h = 'height :' +  String(height) + 'vh';
+                return h
+    }
+
 
 		
 

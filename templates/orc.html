@@ -1,0 +1,48 @@
+
+<div class="container">
+	<div class="row">		
+		<div class="col-md-12">
+			<span style="display: inline-block;"><b>Orçamento total:</b></span>
+			<input style="display: inline-block;" ng-model='orcTotal' type="number">
+			<span style="display: inline-block;"> ({{valueTotal(orcTotal)}})</span>
+		</div>
+	</div>
+	<div class="row">
+		<div id="canvas" class="col-md-12">
+			<span id='fullText'>100%</span>
+			<div id="fullMarker"></div>
+			<div ng-repeat="item in items track by $index" class='bar' style="{{barStyle(item)}}" ng-mouseenter="barMouseEnter($index)" ng-mouseleave="barMouseLeave($index)">
+				<p class="tooltips">{{item.name}}</p>
+			</div>
+
+		</div>
+	</div> <!-- end row -->
+
+	<div class="row">
+		<div class="col-md-12">
+			<ul id="myTabs" class="nav nav-tabs nav-justified">
+			  <li role="presentation" class="active"><a href="" ng-click="toIdeal()">Ideal</a></li>
+<!-- 			  <li role="presentation"><a href="#">Imaginário</a></li> -->
+			  <li role="presentation"><a href="" ng-click="toReal()">Imaginário</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="boxRow" class="row">
+		<div class="col-sm-4 col-md-3" ng-repeat="item in items track by $index">
+
+			<div class="form-box equalize" style="{{item.color}}" ng-mouseenter="boxMouseEnter($index)" ng-mouseleave="boxMouseLeave($index)">
+				<img class="itemIcon" src="{{item.imageSrc}}">
+				<h6 class="catTitle">{{ item.name }} <br><span>({{valueItem(item)}})</span></h6>
+				<input required class="form-control" type="number" step="0.01" max="50" min="0" ng-model='item.value'>
+			</div>
+				
+		</div>		
+	</div> <!-- end row -->
+</div> <!-- end container -->
+
+<div id="barraRestante">
+	<div style="{{barLeft(sum(items))}}">
+		
+	</div>
+	<p><small><b>Orçamento disponível: </b>{{sum2(items)}}%</small></p>
+</div>
