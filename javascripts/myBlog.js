@@ -17,14 +17,16 @@ app.config(function($routeProvider) {
 
 app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $route){
 
-    $scope.$on('$routeChangeStart', function (event, next, prev) {
-        console.log('oi');
-        $( "#appView" ).addClass( "faded" );
-    });
-    $scope.$on('$routeChangeSuccess', function (event, next, prev) {
-        console.log('tchau');
-        $( "#appView" ).delay(500).removeClass( "faded" );
-    });
+    // $scope.$on('$routeChangeStart', function (event, next, prev) {
+    //     console.log('oi');
+    //     $( "#appView" ).addClass( "faded" );
+    // });
+    // $scope.$on('$routeChangeSuccess', function (event, next, prev) {
+    //     console.log('tchau');
+    //     $( "#appView" ).delay(500).removeClass( "faded" );
+    // });
+
+
 
     $scope.gabarito = [ 
         {
