@@ -48,7 +48,7 @@ header ul {
 header ul li {
     display: inline;
     font-size: 14px;
-    padding: 15px;
+    padding: 10px;
 }
 
 #brand {
@@ -63,14 +63,25 @@ header a:hover, header a:visited, header a:focus, header a:active {
 span.glyphicon.glyphicon-menu-hamburger,  span.glyphicon.glyphicon-remove{
     position: absolute;
     right: 0;
-    top: 7px;
+    top: 3.8px;
 }
 
 @media all and (max-width: 767px) {
-#brand {
-    font-size: 18px;
-    margin: 0px;
-}
+    #brand {
+        font-size: 16px;
+        margin: 0px;
+    }
+
+    header ul {
+        float: none; 
+        text-align: left;
+        padding: 0;
+    }
+    header ul li {
+        display: block;
+        font-size: 14px;   
+        padding: 10px 0;
+    }
 }
 
 #appView {
