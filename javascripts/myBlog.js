@@ -573,22 +573,22 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
         $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;';
         $('.bar').eq(i).addClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 1);
-        
+
     }
     $scope.barMouseLeave = function(i) {
         $scope.items[i].style = 'background-color: #f6f6f6; border:  1px solid #e7e7e7;'; 
         $('.bar').eq(i).removeClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 0);
-        
+
     }
 
     $scope.boxMouseEnter = function(i) {
         $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;';
-        
+
     }
     $scope.boxMouseLeave = function(i) {
         $scope.items[i].style = 'background-color: #f6f6f6; border:  1px solid #e7e7e7;'; 
-        
+
     }
 
     $scope.barMouseEnterComp = function(i) {
@@ -600,7 +600,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
         $('.bgabarito .tooltips').eq(i).css('opacity', 1);
         $('.bideal .tooltips').eq(i).css('opacity', 1);
         $('.bimaginario .tooltips').eq(i).css('opacity', 1);
-        
+
     }
     $scope.barMouseLeaveComp = function(i) {
         $scope.items[i].style = 'background-color: #f6f6f6; border:  1px solid #e7e7e7;'; 
@@ -611,7 +611,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
         $('.bgabarito .tooltips').eq(i).css('opacity', 0);
         $('.bideal .tooltips').eq(i).css('opacity', 0);
         $('.bimaginario .tooltips').eq(i).css('opacity', 0);
-        
+
 
     }
 
@@ -731,6 +731,12 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
             };
         }
         
+    }
+
+    $scope.expandMenu = function() {
+        $('header ul').toggleClass('hidden-xs');
+        $('header .glyphicon').toggleClass('glyphicon-menu-hamburger');
+        $('header .glyphicon').toggleClass('glyphicon-remove');
     }
 
 
