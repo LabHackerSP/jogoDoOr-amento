@@ -570,7 +570,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
     }
 
     $scope.barMouseEnter = function(i) {
-        $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;';
+        $scope.items[i].style = 'background-color: #fff; border: 1px solid #ccc;';
         $('.bar').eq(i).addClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 1);
 
@@ -583,7 +583,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
     }
 
     $scope.boxMouseEnter = function(i) {
-        $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;';
+        $scope.items[i].style = 'background-color: #fff; border: 1px solid #ccc;';
 
     }
     $scope.boxMouseLeave = function(i) {
@@ -592,7 +592,7 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
     }
 
     $scope.barMouseEnterComp = function(i) {
-        $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;'; 
+        $scope.items[i].style = 'background-color: #fff; border: 1px solid #ccc;'; 
         $('.bgabarito').eq(i).addClass('barhover');
         $('.bideal').eq(i).addClass('barhover');
         $('.bimaginario').eq(i).addClass('barhover');
