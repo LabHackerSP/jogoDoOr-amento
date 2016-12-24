@@ -51,7 +51,7 @@ header ul li {
     padding: 15px;
 }
 
-header h1 {
+#brand {
     font-size: 26px;
     margin: 0px;
 }
@@ -64,6 +64,13 @@ span.glyphicon.glyphicon-menu-hamburger,  span.glyphicon.glyphicon-remove{
     position: absolute;
     right: 0;
     top: 7px;
+}
+
+@media all and (max-width: 767px) {
+#brand {
+    font-size: 18px;
+    margin: 0px;
+}
 }
 
 #appView {
