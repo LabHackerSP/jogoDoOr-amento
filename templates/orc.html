@@ -1,10 +1,13 @@
 
 <div class="container">
 	<div class="row">		
-		<div class="col-md-12">
-			<span style="display: inline-block;"><b>Orçamento total:</b></span>
-			<input style="display: inline-block;" ng-model='orcTotal' type="number">
-			<span style="display: inline-block;"> ({{valueTotal(orcTotal)}})</span>
+		<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+			<div class="form-total">
+				<span style="display: inline-block;"><b>Orçamento total:</b></span>
+				<input style="display: inline-block;" ng-model='orcTotal' type="number">
+				<span style="display: inline-block;"> ({{valueTotal(orcTotal)}})</span>
+			</div>
+	
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +23,7 @@
 
 	<div class="row">
 		<div class="col-md-12">
-			<ul id="myTabs" class="nav nav-tabs nav-justified">
+			<ul id="myTabs" class="nav nav-tabs">
 			  <li role="presentation" class="active"><a href="" ng-click="toIdeal()">Ideal</a></li>
 <!-- 			  <li role="presentation"><a href="#">Imaginário</a></li> -->
 			  <li role="presentation"><a href="" ng-click="toImaginario()">Imaginário</a></li>
@@ -44,5 +47,6 @@
 	<div style="{{barLeft(sum(items))}}">
 		
 	</div>
+
 	<p><small><b>Orçamento disponível: </b>{{sum2(items)}}%</small></p>
 </div>

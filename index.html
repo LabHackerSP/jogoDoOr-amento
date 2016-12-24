@@ -28,7 +28,10 @@
 
 </header> <!-- end container -->
 
-<div ng-view></div>			
+<div id="appView"  class="page {{ pageClass }}">
+	<div ng-view></div>	
+</div>
+			
 
 
 <div id="footer" class="container-fluid">
@@ -38,43 +41,36 @@
 </div> <!-- end wrapper -->
 <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script  src="javascripts/myBlog.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
 <script type="text/javascript">
-$( window ).load(function() {
+// $( window ).load(function() {
 
+// 	jQuery.fn.equalHeights = function() {
+// 	    var maxHeight = 0;
+// 	    $this = (this).height();           
+// 	    jQuery(".equalize").each(function(){
+// 	      if (jQuery(this).height() > maxHeight) { maxHeight = jQuery(this).height(); }
+// 	    });         
+// 	    jQuery(this).height(maxHeight);
+// 	};
 
+// 	if(jQuery(window).width() > 767) {
+// 	     jQuery(document).ready(function() {
+// 		    jQuery('.equalize').equalHeights();
+// 		});
 
+// 		jQuery(function() {
+// 		  jQuery.fn.almComplete = function(alm){
+// 		    jQuery('.equalize').equalHeights();
+// 		  };
+// 		});
 
-	jQuery.fn.equalHeights = function() {
-	    var maxHeight = 0;
-	    $this = (this).height();           
-	    jQuery(".equalize").each(function(){
-	      if (jQuery(this).height() > maxHeight) { maxHeight = jQuery(this).height(); }
-	    });         
-	    jQuery(this).height(maxHeight);
-	};
-
-
-
-	if(jQuery(window).width() > 767) {
-	     jQuery(document).ready(function() {
-		    jQuery('.equalize').equalHeights();
-		});
-
-		jQuery(function() {
-		  jQuery.fn.almComplete = function(alm){
-		    jQuery('.equalize').equalHeights();
-		  };
-		});
-
-	};
-});
-
-
-
+// 	};
+// });
 
 </script>
 </body>
