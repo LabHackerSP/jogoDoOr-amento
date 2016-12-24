@@ -570,25 +570,29 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
     }
 
     $scope.barMouseEnter = function(i) {
-        $scope.items[i].color = 'background-color: #fff;';
+        $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;';
         $('.bar').eq(i).addClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 1);
+        
     }
     $scope.barMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: #f6f6f6';
+        $scope.items[i].style = 'background-color: #f6f6f6; border:  1px solid #e7e7e7;'; 
         $('.bar').eq(i).removeClass('barhover');
         $('.bar .tooltips').eq(i).css('opacity', 0);
+        
     }
 
     $scope.boxMouseEnter = function(i) {
-        $scope.items[i].color = 'background-color: #fff;'
+        $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;';
+        
     }
     $scope.boxMouseLeave = function(i) {
-        $scope.items[i].color = 'background-color: #f6f6f6'
+        $scope.items[i].style = 'background-color: #f6f6f6; border:  1px solid #e7e7e7;'; 
+        
     }
 
     $scope.barMouseEnterComp = function(i) {
-        $scope.items[i].color = 'background-color: #fff;'
+        $scope.items[i].style = 'background-color: #fff; border: 1px solid #3c3c3c;'; 
         $('.bgabarito').eq(i).addClass('barhover');
         $('.bideal').eq(i).addClass('barhover');
         $('.bimaginario').eq(i).addClass('barhover');
@@ -596,17 +600,18 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
         $('.bgabarito .tooltips').eq(i).css('opacity', 1);
         $('.bideal .tooltips').eq(i).css('opacity', 1);
         $('.bimaginario .tooltips').eq(i).css('opacity', 1);
+        
     }
     $scope.barMouseLeaveComp = function(i) {
-        $scope.items[i].color = 'background-color: #f6f6f6;'
+        $scope.items[i].style = 'background-color: #f6f6f6; border:  1px solid #e7e7e7;'; 
         $('.bgabarito').eq(i).removeClass('barhover');
         $('.bideal').eq(i).removeClass('barhover');
         $('.bimaginario').eq(i).removeClass('barhover');
-        $('.bar .tooltips').eq(i).css('opacity', 0);
 
         $('.bgabarito .tooltips').eq(i).css('opacity', 0);
         $('.bideal .tooltips').eq(i).css('opacity', 0);
         $('.bimaginario .tooltips').eq(i).css('opacity', 0);
+        
 
     }
 

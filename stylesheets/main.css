@@ -3,11 +3,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body	{
-    margin-top: 130px;
+    margin-top: 80px;
 	font-family: Helvetica, sans-serif;
 	padding-top: 20px;
-    background: url("https://subtlepatterns.com/patterns/rough_diagonal.png");
-    text-rendering: geometricPrecision;
+    
+
+background: #E0EAFC; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #F0FCEA , #CFDEF3); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #F0FCEA , #CFDEF3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
 
 }
 
@@ -31,7 +35,7 @@ header {
     background: #333;
     width: 100%;
     color: #fff;
-    padding: 30px;
+    padding: 10px;
     z-index: 999;
 }
 
@@ -135,6 +139,13 @@ header a:hover, header a:visited, header a:focus, header a:active {
     max-height: 25px;
 }
 
+span.glyphicon.glyphicon-question-sign {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #aaa;
+}
+
 
 #fullMarker {
     height: 45px;
@@ -186,7 +197,9 @@ header a:hover, header a:visited, header a:focus, header a:active {
     margin-top: 35px;
     margin-bottom: 15px;
     padding: 0;
-    background-color: #fafafa;
+    background-color: #fafafa;;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .bar {
@@ -196,8 +209,8 @@ header a:hover, header a:visited, header a:focus, header a:active {
 }
 
 .bar:hover, .barhover {
-    -webkit-filter: brightness(50%); /* Safari 6.0 - 9.0 */
-    filter: brightness(50%);
+    -webkit-filter: brightness(150%); /* Safari 6.0 - 9.0 */
+    filter: brightness(150%);
     margin-top: -10px !important;
     height: 45px !important;
 
@@ -207,7 +220,7 @@ header a:hover, header a:visited, header a:focus, header a:active {
     opacity: 0;
     white-space: nowrap;
     padding: 0px;
-    font-size: 12px;
+    font-size: 13px;
     border-bottom: 5px solid black;
     transform: translate(0, -21px);
 }
@@ -266,6 +279,9 @@ div.bar.bgabarito:nth-of-type(2n+1) {
     margin-top: 7px;
     margin-bottom: 8px;
     padding: 0 10px 10px 10px;
+}
+.form-box-comp:hover {
+    border: 1px solid #3c3c3c;
 }
 
 .form-box-comp .catTitle {

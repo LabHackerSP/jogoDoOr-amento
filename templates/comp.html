@@ -42,7 +42,7 @@
 	<div id="boxRow" class="row">
 		<div class="col-sm-12 col-md-2"  ng-repeat-start="item in items track by $index">
 
-			<div class="form-box-comp" style="{{item.color}}" ng-mouseenter="barMouseEnterComp($index)" ng-mouseleave="barMouseLeaveComp($index)">
+			<div class="form-box-comp" style="{{item.style}}" ng-mouseenter="barMouseEnterComp($index)" ng-mouseleave="barMouseLeaveComp($index)">
 				<div class="barsBoxWrapper row">
 					<div class="barIdeal"  style="{{barStyleComparar(ideal, $index)}}" ><span class="compBarValue">{{ideal[$index].value.toFixed(2)}}%
 					<!--  <br> {{valueItem(ideal[$index])}} --></span></div>
