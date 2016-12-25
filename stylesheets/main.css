@@ -136,6 +136,7 @@ span.glyphicon.glyphicon-menu-hamburger,  span.glyphicon.glyphicon-remove{
     transform: translate(10px, 0 );
     text-transform: uppercase;
     display: inline-block;
+    max-width: 140px
 }
 
 .catTitle span {
@@ -149,8 +150,8 @@ span.glyphicon.glyphicon-menu-hamburger,  span.glyphicon.glyphicon-remove{
     padding: 15px 15px 15px 15px;
     background-color: #f6f6f6
 }
-.form-box {
-    min-height: 100px;
+.form-box {    
+    min-height: 115px;
     border: 1px solid #e7e7e7;
     border-radius: 5px;
     margin-top: 7px;
