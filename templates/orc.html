@@ -35,14 +35,16 @@
 		<div class="col-sm-4 col-md-3" ng-repeat="item in items track by $index">
 
 			<div class="descriptionBox">
-				<small>{{item.description}}</small>
+				<ul>
+					<li  ng-repeat='func in item.description'><small>{{func}}</small></li>
+				</ul>
 			</div>
 
 			<div class="form-box equalize" style="{{item.style}}" ng-mouseenter="barMouseEnter($index)" ng-mouseleave="barMouseLeave($index)">
 
-				<span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-mouseenter='showDesc($index)' ng-mouseleave='showDesc($index)'></span>
 				<img class="itemIcon" src="{{item.imageSrc}}">
 				<h6 class="catTitle">{{ item.name }} <br><span>({{valueItem(item)}})</span></h6>
+				<span class="glyphicon glyphicon-question-sign infoSign" aria-hidden="true" ng-click='showDesc($index)'></span>
 				<input required class="form-control" type="number" step="0.01" max="50" min="0" ng-model='item.value'>
 			</div>
 				

@@ -1,4 +1,4 @@
-$scope.gabarito = [ 
+var desc = [ 
         {
         	description: 'massademais'
         }, 
@@ -85,4 +85,8 @@ $scope.gabarito = [
         }, 
         {
         	description: 'massademais'
-    } ];
+} ];
+
+for (i in items) {
+    items[i].push(desc[i].description)
+}

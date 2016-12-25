@@ -295,177 +295,152 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
             value: 2,
     } ];
 
-    var categorias = [ 
+    var categorias = [
         {
-            name: 'Legislativa',
-            imageSrc: 'icons/i_04.png',
-            description: 'massa'
+            description:["Ação Legislativa","Controle Externo"],
+            name:"Legislativa",
+            imageSrc:"icons/i_04.png"
         },
         {
-            name: 'Judiciária',
-            imageSrc: 'icons/i_21.png',
-            description: 'massa'
-
+            description:["Ação Judiciária","Defesa do Interesse Público no Processo Judiciário"],
+            name:"Judiciária",
+            imageSrc:"icons/i_21.png"
         },
         {
-            name: 'Essencial à Justiça',
-            imageSrc: 'icons/i_24.png',
-            description: 'massa'
-
+            description:["Defesa da Ordem Jurídica","Representação Judicial e Extrajudicial"],
+            name:"Essencial à Justiça",
+            imageSrc:"icons/i_24.png"
         },
         {
-            name: 'Administração',
-            imageSrc: 'icons/i_27.png',
-            description: 'massa'
-
+            description:["Planejamento e Orçamento","Administração Geral","Administração Financeira","Controle Interno","Normatização e Fiscalização","Tecnologia da Informação","Ordenamento Territorial","Formação de Recursos Humanos","Administração de Receitas","Administração de Concessões","Comunicação Social"],
+            name:"Administração",
+            imageSrc:"icons/i_27.png"
         },
         {
-            name: 'Defesa Nacional',
-            imageSrc: 'icons/i_18.png',
-            description: 'massa'
-
+            description:["Defesa Aérea","Defesa Naval","Defesa Terrestre"],
+            name:"Defesa Nacional",
+            imageSrc:"icons/i_18.png"
         },
         {
-            name: 'Segurança Pública',
-            imageSrc: 'icons/i_19.png',
-            description: 'massa'
-
+            description:["Policiamento","Defesa Civil","Informação e Inteligência"],
+            name:"Segurança Pública",
+            imageSrc:"icons/i_19.png"
         },
         {
-            name: 'Relações Exteriores',
-            imageSrc: 'icons/i_08.png',
-            description: 'massa'
-
+            description:["Relações Diplomáticas","Cooperação Internacional"],
+            name:"Relações Exteriores",
+            imageSrc:"icons/i_08.png"
         },
         {
-            name: 'Assistência Social',
-            imageSrc: 'icons/i_12.png',
-            description: 'massa'
-
+            description:["Assistência ao Idoso","Assistência ao Portador de Deficiência","Assistência à Criança e ao Adolescente","Assistência Comunitária"],
+            name:"Assistência Social",
+            imageSrc:"icons/i_12.png"
         },
         {
-            name: 'Previdência Social',
-            imageSrc: 'icons/i_03.png',
-            description: 'massa'
-
+            description:["Previdência Básica","Previdência do Regime Estatutário","Previdência Complementar","Previdência Especial"],
+            name:"Previdência Social",
+            imageSrc:"icons/i_03.png"
         },
         {
-            name: 'Saúde',
-            imageSrc: 'icons/i_09.png',
-            description: 'O artigo 196 de nossa Constituição afirma que a saúde é direito de todos e dever do Estado, garantido por meio de políticas sociais e econômicas. A política pública de saúde no Brasil é efetivada principalmente pelo Sistema Único de Saíde (SUS), que tem como objetivo promover a igualdade no atendimento das necessidades de saúde da população, ofertando serviços de qualidade, independente do poder aquisitivo do cidadão. '    
+            description:["Atenção Básica","Assistência Hospitalar e Ambulatorial","Suporte Profilático e Terapêutico","Vigilância Sanitária","Vigilância Epidemiológica","Alimentação e Nutrição"],
+            name:"Saúde",
+            imageSrc:"icons/i_09.png"
         },
         {
-            name: 'Trabalho',
-            imageSrc: 'icons/i_15.png',
-            description: 'massa'
-
+            description:["Proteção e Benefícios ao Trabalhador","Relações de Trabalho","Empregabilidade","Fomento ao Trabalho"],
+            name:"Trabalho",
+            imageSrc:"icons/i_15.png"
         },
         {
-            name: 'Educação',
-            imageSrc: 'icons/i_06.png',
-            description: 'massa'
-
+            description:["Ensino Fundamental","Ensino Médio","Ensino Profissional ","Ensino Superior","Educação Infantil","Educação de Jovens e Adultos","Educação Especial","Educação Básica (3) (I)"],
+            name:"Educação",
+            imageSrc:"icons/i_06.png"
         },
         {
-            name: 'Cultura',
-            imageSrc: 'icons/i_05.png',
-            description: 'massa'
-
+            description:["Patrimônio Histórico, Artístico e Arqueológico","Difusão Cultural"],
+            name:"Cultura",
+            imageSrc:"icons/i_05.png"
         },
         {
-            name: 'Direitos da Cidadania',
-            imageSrc: 'icons/i_17.png',
-            description: 'massa'
-
+            description:["Custódia e Reintegração Social","Direitos Individuais, Coletivos e Difusos","Assistência aos Povos Indígenas"],
+            name:"Direitos da Cidadania",
+            imageSrc:"icons/i_17.png"
         },
         {
-            name: 'Urbanismo',
-            imageSrc: 'icons/i_25.png',
-            description: 'massa'
-
+            description:["Infra-Estrutura Urbana","Serviços Urbanos","Transportes Coletivos Urbanos"],
+            name:"Urbanismo",
+            imageSrc:"icons/i_25.png"
         },
         {
-            name: 'Habitação',
-            imageSrc: 'icons/i_23.png',
-            description: 'massa'
-
+            description:["Habitação Rural","Habitação Urbana"],
+            name:"Habitação",
+            imageSrc:"icons/i_23.png"
         },
         {
-            name: 'Saneamento',
-            imageSrc: 'icons/i_02.png',
-            description: 'massa'
-
+            description:["Saneamento Básico Rural","Saneamento Básico Urbano"],
+            name:"Saneamento",
+            imageSrc:"icons/i_02.png"
         },
         {
-            name: 'Gestão Ambiental',
-            imageSrc: 'icons/i_16.png',
-            description: 'massa'
-
+            description:["Preservação e Conservação Ambiental","Controle Ambiental","Recuperação de Áreas Degradadas","Recursos Hídricos","Meteorologia"],
+            name:"Gestão Ambiental",
+            imageSrc:"icons/i_16.png"
         },
         {
-            name: 'Ciência e Tecnologia',
-            imageSrc: 'icons/i_13.png',
-            description: 'massa'
-
+            description:["Desenvolvimento Científico","Desenvolvimento Tecnológico e Engenharia","Difusão do Conhecimento Científico e Tecnológico"],
+            name:"Ciência e Tecnologia",
+            imageSrc:"icons/i_13.png"
         },
         {
-            name: 'Agricultura',
-            imageSrc: 'icons/i_10.png',
-            description: 'massa'
-
+            description:["Promoção da Produção Vegetal (4) (E)","Promoção da Produção Animal(4) (E)","Defesa Sanitária Vegetal (4) (E)","Defesa Sanitária Animal (4)(E)","Abastecimento","Extensão Rural","Irrigação","Promoção da Produção Agropecuária (4) (I)","Defesa Agropecuária (4)(I)"],
+            "name":"Agricultura",
+            "imageSrc":"icons/i_10.png"
         },
         {
-            name: 'Organização Agrária',
-            imageSrc: 'icons/i_28.png',
-            description: 'massa'
-
+            description:["Reforma Agrária","Colonização"],
+            name:"Organização Agrária",
+            imageSrc:"icons/i_28.png"
         },
         {
-            name: 'Indústria',
-            imageSrc: 'icons/i_22.png',
-            description: 'massa'
-
+            description:["Promoção Industrial","Produção Industrial","Mineração","Propriedade Industrial","Normalização e Qualidade"],
+            name:"Indústria",
+            imageSrc:"icons/i_22.png"
         },
         {
-            name: 'Comércio e Serviços',
-            imageSrc: 'icons/i_22.png',
-            description: 'massa'
-        },  
-        {
-            name: 'Comunicações',
-            imageSrc: 'icons/i_14.png',
-            description: 'massa'
-
+            description:["Promoção Comercial","Comercialização","Comércio Exterior","Serviços Financeiros","Turismo"],
+            name:"Comércio e Serviços",
+            imageSrc:"icons/i_22.png"
         },
         {
-            name: 'Energia',
-            imageSrc: 'icons/i_11.png',
-            description: 'massa'
-
+            description:["Comunicações Postais","Telecomunicações"],
+            name:"Comunicações",
+            imageSrc:"icons/i_14.png"
         },
         {
-            name: 'Transporte',
-            imageSrc: 'icons/i_07.png',
-            description: 'massa'
-
+            description:["Conservação de Energia","Energia Elétrica","Combustíveis Minerais (2) (A)","Biocombustíveis (2) (A)"],
+            name:"Energia",
+            imageSrc:"icons/i_11.png"
         },
         {
-            name: 'Desporto e Lazer',
-            imageSrc: 'icons/i_21.png',
-            description: 'massa'
-
+            description:["Transporte Aéreo","Transporte Rodoviário","Transporte Ferroviário","Transporte Hidroviário","Transportes Especiais "],
+            name:"Transporte",
+            imageSrc:"icons/i_07.png"
         },
         {
-            name: 'Encargos Especiais',
-            imageSrc: 'icons/i_26.png',
-            description: 'massa'
-
+            description:["Desporto de Rendimento","Desporto Comunitário","Lazer"],
+            name:"Desporto e Lazer",
+            imageSrc:"icons/i_21.png"
         },
         {
-            name: 'Reserva de Contingência',
-            imageSrc: 'icons/i_29.png',
-        description: 'massa'
-    } ];
+            description:["Refinanciamento da Dívida Interna","Refinanciamento da Dívida Externa","Serviço da Dívida Interna","Serviço da Dívida Externa","Outras Transferências (I) (A)","Outros Encargos Especiais","Transferências para a Educação Básica (1) (I)"],
+            name:"Encargos Especiais",
+            imageSrc:"icons/i_26.png"
+        },
+        {
+            description:["Refinanciamento da Dívida Interna","Refinanciamento da Dívida Externa","Serviço da Dívida Interna","Serviço da Dívida Externa","Outras Transferências (I) (A)","Outros Encargos Especiais","Transferências para a Educação Básica (1) (I)"],
+            name:"Reserva de Contingência",
+            imageSrc:"icons/i_29.png"
+    }];
 
     for (i in $scope.gabarito) {
         var item = categorias[i]
@@ -480,11 +455,12 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
         $scope.gabarito[i].imageSrc =  item.imageSrc;
         $scope.ideal[i].imageSrc =  item.imageSrc;
         $scope.imaginario[i].imageSrc =  item.imageSrc;
+
+
     }
 
     $scope.items = $scope.ideal;
 
-    console.log($scope.gabarito[20].description);
 
 
     $scope.toIdeal = function () {
@@ -578,9 +554,13 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
 
     $scope.showDesc = function (i){
         console.log('topzera')
-        var ind = i + 1
-        var element = '#boxRow div:nth-of-type(' + ind + ') .descriptionBox'
+        i += 1
+        i = String(i)
+        var e = '#boxRow div.col-md-3:nth-child('
+        var element = e + i + ') .descriptionBox'
+        var element2 = e + i + ') .infoSign'
         $(element).toggleClass('show');
+        $(element2).toggleClass('glyphicon-question-sign').toggleClass('glyphicon-minus');
     }
 
 
