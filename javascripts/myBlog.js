@@ -30,446 +30,462 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
 
     $scope.gabarito = [ 
         {
-        	value: 0.2562461713,
-        	name: 'Legislativa',
-            imageSrc: 'icons/i_04.png'
+            value: 0.2562461713,
         }, 
         {
-        	value: 1.137733,
-        	name: 'Judiciária',
-            imageSrc: 'icons/i_21.png'
+            value: 1.137733,
         }, 
         {
-        	value: 0.2220800151,
-        	name: 'Essencial à Justiça',
-            imageSrc: 'icons/i_24.png'
+            value: 0.2220800151,
         }, 
         {
-        	value: 0.9566523727,
-        	name: 'Administração',
-            imageSrc: 'icons/i_27.png'
+            value: 0.9566523727,
         }, 
         {
-        	value: 2.053385986,
-        	name: 'Defesa Nacional',
-            imageSrc: 'icons/i_18.png'
+            value: 2.053385986,
         }, 
         {
-        	value: 0.276745865,
-        	name: 'Segurança Pública',
-            imageSrc: 'icons/i_19.png'
+            value: 0.276745865,
         }, 
         {
-        	value: 0.1059150841,
-        	name: 'Relações Exteriores',
-            imageSrc: 'icons/i_08.png'
+            value: 0.1059150841,
         }, 
         {
-        	value: 2.65812695,
-        	name: 'Assistência Social',
-            imageSrc: 'icons/i_12.png'
+            value: 2.65812695,
         }, 
         {
-        	value: 19.56695764,
-        	name: 'Previdência Social',
-            imageSrc: 'icons/i_03.png'
+            value: 19.56695764,
         }, 
         {
-        	value: 3.430282079,
-        	name: 'Saúde',
-            imageSrc: 'icons/i_09.png'
+            value: 3.430282079,
         }, 
         {
-        	value: 2.538545403,
-        	name: 'Trabalho',
-            imageSrc: 'icons/i_15.png'
+            value: 2.538545403,
         }, 
         {
-        	value: 3.519114085,
-        	name: 'Educação',
-            imageSrc: 'icons/i_06.png'
+            value: 3.519114085,
         }, 
         {
-        	value: 0.07516554357,
-        	name: 'Cultura',
-            imageSrc: 'icons/i_05.png'
+            value: 0.07516554357,
         }, 
         {
-        	value: 0.04441600302,
-        	name: 'Direitos da Cidadania',
-            imageSrc: 'icons/i_17.png'
+            value: 0.04441600302,
         }, 
         {
-        	value: 0.08541539042,
-        	name: 'Urbanismo',
-            imageSrc: 'icons/i_25.png'
+            value: 0.08541539042,
         }, 
         {
-        	value: 0.4236603365,
-        	name: 'Habitação',
-            imageSrc: 'icons/i_23.png'
+            value: 0.4236603365,
         }, 
         {
-        	value: 0.02982705433,
-        	name: 'Saneamento',
-            imageSrc: 'icons/i_02.png'
+            value: 0.02982705433,
         }, 
         {
-        	value: 0.2118301682,
-        	name: 'Gestão Ambiental',
-            imageSrc: 'icons/i_16.png'
+            value: 0.2118301682,
         }, 
         {
-        	value: 0.2835790962,
-        	name: 'Ciência e Tecnologia',
-            imageSrc: 'icons/i_13.png'
+            value: 0.2835790962,
         }, 
         {
-        	value: 1.028401301,
-        	name: 'Agricultura',
-            imageSrc: 'icons/i_10.png'
+            value: 1.028401301,
         }, 
         {
-        	value: 0.1366646247,
-        	name: 'Organização Agrária',
-            imageSrc: 'icons/i_28.png'
+            value: 0.1366646247,
         }, 
         {
-        	value: 0.0649156967,
-        	name: 'Indústria',
-            imageSrc: 'icons/i_22.png'
+            value: 0.0649156967,
         }, 
         {
             value: 0.1810806277,
-            name: 'Comércio e Serviços',
-            imageSrc: 'icons/i_22.png'
         },  
         {
-        	value: 0.05124923425,
-        	name: 'Comunicações',
-            imageSrc: 'icons/i_14.png'
+            value: 0.05124923425,
         }, 
         {
-        	value: 0.06833231233,
-        	name: 'Energia',
-            imageSrc: 'icons/i_11.png'
+            value: 0.06833231233,
         }, 
         {
-        	value: 0.6218240422,
-        	name: 'Transporte',
-            imageSrc: 'icons/i_07.png'
+            value: 0.6218240422,
         }, 
         {
-        	value: 0.05124923425,
-        	name: 'Desporto e Lazer',
-            imageSrc: 'icons/i_21.png'
+            value: 0.05124923425,
         }, 
         {
-        	value: 58.08246548,
-        	name: 'Encargos Especiais',
-            imageSrc: 'icons/i_26.png'
+            value: 58.08246548,
         }, 
         {
-        	value: 1.838139202,
-        	name: 'Reserva de Contingência',
-            imageSrc: 'icons/i_29.png'
+            value: 1.838139202,
     } ];
 
     $scope.ideal = [ 
         {
             value: 1,
-            name: 'Legislativa',
-            imageSrc: 'icons/i_04.png'
         }, 
         {
             value: 1,
-            name: 'Judiciária',
-            imageSrc: 'icons/i_21.png'
         }, 
         {
             value: 1,
-            name: 'Essencial à Justiça',
-            imageSrc: 'icons/i_24.png'
         }, 
         {
             value: 1,
-            name: 'Administração',
-            imageSrc: 'icons/i_27.png'
         }, 
         {
             value: 1,
-            name: 'Defesa Nacional',
-            imageSrc: 'icons/i_18.png'
         }, 
         {
             value: 1,
-            name: 'Segurança Pública',
-            imageSrc: 'icons/i_19.png'
         }, 
         {
             value: 1,
-            name: 'Relações Exteriores',
-            imageSrc: 'icons/i_08.png'
         }, 
         {
             value: 1,
-            name: 'Assistência Social',
-            imageSrc: 'icons/i_12.png'
         }, 
         {
             value: 1,
-            name: 'Previdência Social',
-            imageSrc: 'icons/i_03.png'
         }, 
         {
             value: 1,
-            name: 'Saúde',
-            imageSrc: 'icons/i_09.png'
         }, 
         {
             value: 1,
-            name: 'Trabalho',
-            imageSrc: 'icons/i_15.png'
         }, 
         {
             value: 1,
-            name: 'Educação',
-            imageSrc: 'icons/i_06.png'
         }, 
         {
             value: 1,
-            name: 'Cultura',
-            imageSrc: 'icons/i_05.png'
         }, 
         {
             value: 1,
-            name: 'Direitos da Cidadania',
-            imageSrc: 'icons/i_17.png'
         }, 
         {
             value: 1,
-            name: 'Urbanismo',
-            imageSrc: 'icons/i_25.png'
         }, 
         {
             value: 1,
-            name: 'Habitação',
-            imageSrc: 'icons/i_23.png'
         }, 
         {
             value: 1,
-            name: 'Saneamento',
-            imageSrc: 'icons/i_02.png'
         }, 
         {
             value: 1,
-            name: 'Gestão Ambiental',
-            imageSrc: 'icons/i_16.png'
         }, 
         {
             value: 1,
-            name: 'Ciência e Tecnologia',
-            imageSrc: 'icons/i_13.png'
         }, 
         {
             value: 1,
-            name: 'Agricultura',
-            imageSrc: 'icons/i_10.png'
         }, 
         {
             value: 1,
-            name: 'Organização Agrária',
-            imageSrc: 'icons/i_28.png'
         }, 
         {
             value: 1,
-            name: 'Indústria',
-            imageSrc: 'icons/i_22.png'
         }, 
         {
             value: 1,
-            name: 'Comércio e Serviços',
-            imageSrc: 'icons/i_22.png'
         },  
         {
             value: 1,
-            name: 'Comunicações',
-            imageSrc: 'icons/i_14.png'
         }, 
         {
             value: 1,
-            name: 'Energia',
-            imageSrc: 'icons/i_11.png'
         }, 
         {
             value: 1,
-            name: 'Transporte',
-            imageSrc: 'icons/i_07.png'
         }, 
         {
             value: 1,
-            name: 'Desporto e Lazer',
-            imageSrc: 'icons/i_21.png'
         }, 
         {
             value: 1,
-            name: 'Encargos Especiais',
-            imageSrc: 'icons/i_26.png'
         }, 
         {
             value: 1,
-            name: 'Reserva de Contingência',
-            imageSrc: 'icons/i_29.png'
     } ];
 
     $scope.imaginario = [ 
         {
             value: 2,
-            name: 'Legislativa',
-            imageSrc: 'icons/i_04.png'
         }, 
         {
             value: 2,
-            name: 'Judiciária',
-            imageSrc: 'icons/i_21.png'
         }, 
         {
             value: 2,
-            name: 'Essencial à Justiça',
-            imageSrc: 'icons/i_24.png'
         }, 
         {
             value: 2,
-            name: 'Administração',
-            imageSrc: 'icons/i_27.png'
         }, 
         {
             value: 2,
-            name: 'Defesa Nacional',
-            imageSrc: 'icons/i_18.png'
         }, 
         {
             value: 2,
-            name: 'Segurança Pública',
-            imageSrc: 'icons/i_19.png'
         }, 
         {
             value: 2,
-            name: 'Relações Exteriores',
-            imageSrc: 'icons/i_08.png'
         }, 
         {
             value: 2,
-            name: 'Assistência Social',
-            imageSrc: 'icons/i_12.png'
         }, 
         {
             value: 2,
-            name: 'Previdência Social',
-            imageSrc: 'icons/i_03.png'
         }, 
         {
             value: 2,
-            name: 'Saúde',
-            imageSrc: 'icons/i_09.png'
         }, 
         {
             value: 2,
-            name: 'Trabalho',
-            imageSrc: 'icons/i_15.png'
         }, 
         {
             value: 2,
-            name: 'Educação',
-            imageSrc: 'icons/i_06.png'
         }, 
         {
             value: 2,
-            name: 'Cultura',
-            imageSrc: 'icons/i_05.png'
         }, 
         {
             value: 2,
-            name: 'Direitos da Cidadania',
-            imageSrc: 'icons/i_17.png'
         }, 
         {
             value: 2,
-            name: 'Urbanismo',
-            imageSrc: 'icons/i_25.png'
         }, 
         {
             value: 2,
-            name: 'Habitação',
-            imageSrc: 'icons/i_23.png'
         }, 
         {
             value: 2,
-            name: 'Saneamento',
-            imageSrc: 'icons/i_02.png'
         }, 
         {
             value: 2,
-            name: 'Gestão Ambiental',
-            imageSrc: 'icons/i_16.png'
         }, 
         {
             value: 2,
-            name: 'Ciência e Tecnologia',
-            imageSrc: 'icons/i_13.png'
         }, 
         {
             value: 2,
-            name: 'Agricultura',
-            imageSrc: 'icons/i_10.png'
         }, 
         {
             value: 2,
-            name: 'Organização Agrária',
-            imageSrc: 'icons/i_28.png'
         }, 
         {
             value: 2,
-            name: 'Indústria',
-            imageSrc: 'icons/i_22.png'
         }, 
         {
             value: 2,
-            name: 'Comércio e Serviços',
-            imageSrc: 'icons/i_22.png'
         },  
         {
             value: 2,
-            name: 'Comunicações',
-            imageSrc: 'icons/i_14.png'
         }, 
         {
             value: 2,
-            name: 'Energia',
-            imageSrc: 'icons/i_11.png'
         }, 
         {
             value: 2,
-            name: 'Transporte',
-            imageSrc: 'icons/i_07.png'
         }, 
         {
             value: 2,
-            name: 'Desporto e Lazer',
-            imageSrc: 'icons/i_21.png'
         }, 
         {
             value: 2,
-            name: 'Encargos Especiais',
-            imageSrc: 'icons/i_26.png'
         }, 
         {
             value: 2,
-            name: 'Reserva de Contingência',
-            imageSrc: 'icons/i_29.png'
     } ];
 
+    var categorias = [ 
+        {
+            name: 'Legislativa',
+            imageSrc: 'icons/i_04.png',
+            description: 'massa'
+        },
+        {
+            name: 'Judiciária',
+            imageSrc: 'icons/i_21.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Essencial à Justiça',
+            imageSrc: 'icons/i_24.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Administração',
+            imageSrc: 'icons/i_27.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Defesa Nacional',
+            imageSrc: 'icons/i_18.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Segurança Pública',
+            imageSrc: 'icons/i_19.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Relações Exteriores',
+            imageSrc: 'icons/i_08.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Assistência Social',
+            imageSrc: 'icons/i_12.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Previdência Social',
+            imageSrc: 'icons/i_03.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Saúde',
+            imageSrc: 'icons/i_09.png',
+            description: 'O artigo 196 de nossa Constituição afirma que a saúde é direito de todos e dever do Estado, garantido por meio de políticas sociais e econômicas. A política pública de saúde no Brasil é efetivada principalmente pelo Sistema Único de Saíde (SUS), que tem como objetivo promover a igualdade no atendimento das necessidades de saúde da população, ofertando serviços de qualidade, independente do poder aquisitivo do cidadão. '    
+        },
+        {
+            name: 'Trabalho',
+            imageSrc: 'icons/i_15.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Educação',
+            imageSrc: 'icons/i_06.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Cultura',
+            imageSrc: 'icons/i_05.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Direitos da Cidadania',
+            imageSrc: 'icons/i_17.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Urbanismo',
+            imageSrc: 'icons/i_25.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Habitação',
+            imageSrc: 'icons/i_23.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Saneamento',
+            imageSrc: 'icons/i_02.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Gestão Ambiental',
+            imageSrc: 'icons/i_16.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Ciência e Tecnologia',
+            imageSrc: 'icons/i_13.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Agricultura',
+            imageSrc: 'icons/i_10.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Organização Agrária',
+            imageSrc: 'icons/i_28.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Indústria',
+            imageSrc: 'icons/i_22.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Comércio e Serviços',
+            imageSrc: 'icons/i_22.png',
+            description: 'massa'
+        },  
+        {
+            name: 'Comunicações',
+            imageSrc: 'icons/i_14.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Energia',
+            imageSrc: 'icons/i_11.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Transporte',
+            imageSrc: 'icons/i_07.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Desporto e Lazer',
+            imageSrc: 'icons/i_21.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Encargos Especiais',
+            imageSrc: 'icons/i_26.png',
+            description: 'massa'
+
+        },
+        {
+            name: 'Reserva de Contingência',
+            imageSrc: 'icons/i_29.png',
+        description: 'massa'
+    } ];
+
+    for (i in $scope.gabarito) {
+        var item = categorias[i]
+        $scope.gabarito[i].description =  item.description;
+        $scope.ideal[i].description =  item.description;
+        $scope.imaginario[i].description =  item.description;
+
+        $scope.gabarito[i].name =  item.name;
+        $scope.ideal[i].name =  item.name;
+        $scope.imaginario[i].name =  item.name;
+
+        $scope.gabarito[i].imageSrc =  item.imageSrc;
+        $scope.ideal[i].imageSrc =  item.imageSrc;
+        $scope.imaginario[i].imageSrc =  item.imageSrc;
+    }
+
     $scope.items = $scope.ideal;
+
+    console.log($scope.gabarito[20].description);
+
 
     $scope.toIdeal = function () {
         $scope.items = $scope.ideal;
@@ -558,6 +574,16 @@ app.controller('GameCtrl', ['$scope', '$filter', function($scope, $filter, $rout
         var total = 100 - subtotal
         return total.toFixed(2);
     }
+
+
+    $scope.showDesc = function (i){
+        console.log('topzera')
+        var ind = i + 1
+        var element = '#boxRow div:nth-of-type(' + ind + ') .descriptionBox'
+        $(element).toggleClass('show');
+    }
+
+
 
     $scope.barLeft = function(soma) {
         if (soma > 100) {

@@ -1,117 +1,88 @@
 $scope.gabarito = [ 
         {
-        	name: 'Legislativa',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Judiciária',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Essencial à Justiça',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Administração',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Defesa Nacional',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Segurança Pública',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Relações Exteriores',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Assistência Social',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Previdência Social',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Saúde',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Trabalho',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Educação',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Cultura',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Direitos da Cidadania',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Urbanismo',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Habitação',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Saneamento',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Gestão Ambiental',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Ciência e Tecnologia',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Agricultura',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Organização Agrária',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Indústria',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-            name: 'Comércio e Serviços',
-            description: ''
+            description: 'massademais'
         },  
         {
-        	name: 'Comunicações',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Energia',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Transporte',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Desporto e Lazer',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Encargos Especiais',
-            description: ''
+        	description: 'massademais'
         }, 
         {
-        	name: 'Reserva de Contingência',
-            description: ''
+        	description: 'massademais'
     } ];
